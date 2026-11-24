@@ -43,7 +43,21 @@ git clone https://github.com/nguyenmanhdoan/agency-web-design.git "$env:USERPROF
 git clone https://github.com/nguyenmanhdoan/agency-web-design.git "$HOME/.gemini/config/skills/agency-web-design"
 ```
 
-### 2. Cài cục bộ theo từng dự án (dùng chung Antigravity, Codex, Cursor)
+### 2. OpenAI Codex (Codex App / Codex CLI)
+
+**Cài toàn cục (dùng cho mọi dự án trên máy):**
+
+```powershell
+# Windows (PowerShell)
+git clone https://github.com/nguyenmanhdoan/agency-web-design.git "$env:USERPROFILE\.codex\skills\agency-web-design"
+```
+
+```bash
+# macOS / Linux
+git clone https://github.com/nguyenmanhdoan/agency-web-design.git "$HOME/.codex/skills/agency-web-design"
+```
+
+### 3. Cài cục bộ theo từng dự án (dùng chung Antigravity, Codex, Cursor)
 
 ```powershell
 git clone https://github.com/nguyenmanhdoan/agency-web-design.git ".agents/skills/agency-web-design"
@@ -55,7 +69,22 @@ Hoặc chạy script cài vào workspace:
 .\scripts\install-to-workspace.ps1 -TargetWorkspace "C:\path\to\your\workspace"
 ```
 
-### 3. Phối hợp với `bricks-acss-stack`
+### 4. Cài nhanh qua CLI (`npx skills`)
+
+```bash
+npx skills add nguyenmanhdoan/agency-web-design
+```
+
+### Cập nhật phiên bản mới
+
+Chạy `git pull` trong thư mục skill đã cài:
+
+```powershell
+git -C "$env:USERPROFILE\.gemini\config\skills\agency-web-design" pull
+git -C "$env:USERPROFILE\.codex\skills\agency-web-design" pull
+```
+
+### 5. Phối hợp với `bricks-acss-stack`
 
 1. Dùng `agency-web-design` ở **Pha thiết kế & tạo mẫu (Stage 1 & Gate 1B)** để chốt `DESIGN.md`, `design-system.json`, `tokens.css` và các bản FE Demo HTML/CSS thuần qua kiểm duyệt trực quan trên `playwright-cli`.
 2. Sau khi duyệt mẫu, bàn giao toàn bộ bundle sang **Stage 2 → Stage 4** của [bricks-acss-stack](https://github.com/nguyenmanhdoan/bricks-acss-stack) để đồng bộ lên WordPress + Bricks Builder + ACSS + JetEngine + SureRank qua MCP Novamira Pro.
